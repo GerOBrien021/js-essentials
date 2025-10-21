@@ -7,6 +7,7 @@ let tasks = [];
 
 addTaskBtn.addEventListener("click", addTask);
 clearCompletedBtn.addEventListener("click", clearCompletedTasks);
+clearAllBtn.addEventListener("click", clearAllTasks);
 
 function addTask() {
     const taskText = taskInput.value.trim();
@@ -35,5 +36,10 @@ function toggleTask(index) {
 
 function clearCompletedTasks() {
     tasks = tasks.filter(task => !task.completed);
+    displayTasks();
+}
+
+function clearAllTasks() {
+    tasks.length = 0;
     displayTasks();
 }
